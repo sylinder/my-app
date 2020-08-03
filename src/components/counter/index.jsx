@@ -7,9 +7,9 @@ class Counter extends React.Component {
     }
 
     render() { return <div>
-        <bottom onClick = {this.decrease}>-</bottom>
+        <button onClick = {this.decrease}>-</button>
         <mark>{this.state.value}</mark>
-        <bottom onClick = {this.increase}>+</bottom>
+        <button onClick = {this.increase}>+</button>
     </div>};
 
     state = {};
