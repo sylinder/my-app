@@ -4,14 +4,18 @@ import React from "react"
 class CounterGroup extends React.Component {
     constructor(props) {
         super(props);
-        // console.log(props.size)
         this.state = {size: 0, totalValue: 0};
     }
 
     handleResize = (event) => {
-        this.setState({
-            size: event.target.value ? parseInt(event.target.value) : 0
-        });
+        const newSize = event.target.value ? parseInt(event.target.value) : 0;
+        if (newSize !== this.state.size) {
+            this.setState({
+                size: event.target.value ? parseInt(event.target.value) : 0,
+                totalValue: 0
+            });
+        }
+        
     }
 
     handleIncrease = () => {
@@ -37,9 +41,9 @@ class CounterGroup extends React.Component {
             <div>
             <label>TotalNumber: {this.state.totalValue}</label>
             </div>
-            
+
             {
-                initArray.map(key => <Counter onIncrease = {this.handleIncrease} onDecrease = {this.handleDecrease} key={key}/>)
+                initArray.map(key => <Counter size={this.state.size} onIncrease = {this.handleIncrease} onDecrease = {this.handleDecrease} key={key}/>)
             }
         </div> 
     }
