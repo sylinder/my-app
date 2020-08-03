@@ -18,12 +18,14 @@ class Counter extends React.Component {
         this.setState((preState) => ({
             value: preState.value + 1
         }));
+        this.props.onIncrease();
     }
 
     decrease = () => {
         this.setState((preState) => ({
             value: preState.value - 1
         }));
+        this.props.onDecrease();
     }
 
 }

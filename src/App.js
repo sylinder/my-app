@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Counter from "./components/counter"
 import CounterGroup from "./components/CounterGroup"
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
           Learn React
         </a>
       </header> */
-      <CounterGroup size = {10}/>
+      <CounterGroup sizes = {10}/>
       }
     </div>
   );
